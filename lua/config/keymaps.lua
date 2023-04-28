@@ -23,8 +23,6 @@ if Util.has("bufferline.nvim") then
   map("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Previous buffer" })
 end
 
--- Neotree
--- map("n", "<C-n>", "<cmd>NeoTreeRevealToggle<CR>", { desc = "Toggle NeoTree" }
 map(
   "n",
   "<leader>r",
