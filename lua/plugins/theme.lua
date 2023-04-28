@@ -14,7 +14,7 @@ return {
         },
         highlight_groups = {
           -- Blend colours against the "base" background
-          -- CursorLine = { bg = p.foam, blend = 10 },
+          CursorLine = { bg = p.foam, blend = 10 },
           -- StatusLine = { fg = p.love, bg = p.love, blend = 100 },
           NotifyBackground = { bg = p.nc, fg = p.none },
         },
