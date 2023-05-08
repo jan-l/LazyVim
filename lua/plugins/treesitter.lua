@@ -18,10 +18,14 @@ return {
         "rust",
         "tsx",
         "typescript",
+        -- "prismals",
         "toml",
         "vim",
         "yaml",
       },
     },
+  },
+  {
+    "nvim-treesitter/playground",
   },
 }

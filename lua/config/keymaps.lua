@@ -31,3 +31,7 @@ map(
 )
 
 map("i", "jk", "<esc>", { desc = "Exit insert mode" })
+
+if Util.has("project.nvim") then
+  map("n", "<leader>fP", "<cmd>Telescope projects<cr>", { desc = "Open projects" })
+end

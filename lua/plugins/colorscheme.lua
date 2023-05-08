@@ -9,14 +9,29 @@ return {
         variant = "moon",
         disable_background = true,
         disable_float_background = true,
+        disable_italics = true,
         groups = {
           background = p.none,
         },
         highlight_groups = {
           -- Blend colours against the "base" background
-          CursorLine = { bg = p.foam, blend = 10 },
-          -- StatusLine = { fg = p.love, bg = p.love, blend = 100 },
+          Cursor = { bg = p.rose, fg = p.rose },
+          Delimeter = { fg = p.pine, blend = 5 },
+
+          CursorLine = { bg = p.foam, blend = 5 },
           NotifyBackground = { bg = p.nc, fg = p.none },
+
+          NeoTreeGitUntracked = { fg = p.gold },
+          NeoTreeFileNameOpened = { fg = p.love },
+          -- ["@constructor"] = { fg = p.rose },
+
+          NoiceCmdlinePopupBorder = { fg = p.love },
+          NoiceCursor = { bg = p.rose },
+          NoiceCmdlineIcon = { fg = p.love },
+          NoiceCmdlinePopup = { fg = p.love },
+          -- NoiceCmdline = { fg = p.love },
+          -- -- NoiceCmdlinePrompt = { fg = p.love, bg = p.love },
+          NoiceCompletionItemKindDefault = { fg = p.love },
         },
       })
     end,
