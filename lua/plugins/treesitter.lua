@@ -1,6 +1,9 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
+    dependencies = {
+      "windwp/nvim-ts-autotag",
+    },
     opts = {
       ensure_installed = {
         "bash",
@@ -22,6 +25,9 @@ return {
         "toml",
         "vim",
         "yaml",
+      },
+      autotag = {
+        enable = true,
       },
     },
   },
