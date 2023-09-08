@@ -1,8 +1,10 @@
 return {
   {
     "dmmulroy/tsc.nvim",
-    config = function()
-      require("tsc").setup()
-    end,
+    config = true,
+    cmd = "TSC",
+    keys = {
+      { "<leader>tc", "<cmd>TSC<cr>", desc = "Type-check" },
+    },
   },
 }

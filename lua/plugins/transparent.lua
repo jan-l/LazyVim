@@ -1,6 +1,10 @@
 return {
   {
     "xiyaowong/transparent.nvim",
-    opts = {},
+    opts = {
+      groups = {
+        "NormalFloat",
+      },
+    },
   },
 }

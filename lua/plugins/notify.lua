@@ -11,6 +11,21 @@ return {
         lsp_doc_border = true,
         command_palette = false,
       },
+      lsp = {
+        progress = {
+          enabled = true,
+        },
+      },
+      messages = {
+        enabled = false,
+      },
+    },
+  },
+  {
+    "rcarriga/nvim-notify",
+    opts = {
+      render = "compact",
+      stages = "static",
     },
   },
 }

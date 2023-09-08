@@ -3,6 +3,7 @@ return {
     "rose-pine/neovim",
     name = "rose-pine",
     priority = 1000,
+    opts = { enabled = false },
     config = function()
       local p = require("rose-pine.palette")
       require("rose-pine").setup({
@@ -14,11 +15,17 @@ return {
           background = p.none,
         },
         highlight_groups = {
+          -- ColorColumn = { bg = p.rose },
           -- Blend colours against the "base" background
           Cursor = { bg = p.rose, fg = p.rose },
+          CursorLine = { bg = p.foam, blend = 5 },
+          IncSearch = { bg = p.rose, fg = p.surface },
           Delimeter = { fg = p.pine, blend = 5 },
 
-          CursorLine = { bg = p.foam, blend = 10 },
+          -- FloatBorder = { fg = p.surface, bg = p.surface },
+          -- NormalFloat = { bg = p.surface },
+          -- FloatTitle = { bg = p.surface },
+          --
           NotifyBackground = { bg = p.nc, fg = p.none },
 
           NeoTreeGitUntracked = { fg = p.gold },
@@ -32,6 +39,14 @@ return {
           -- NoiceCmdline = { fg = p.love },
           -- -- NoiceCmdlinePrompt = { fg = p.love, bg = p.love },
           NoiceCompletionItemKindDefault = { fg = p.love },
+
+          -- TelescopeTitle = { fg = p.love, bold = false },
+          -- TelescopePromptNormal = { bg = p.surface },
+          -- TelescopePromptBorder = { fg = p.surface, bg = p.surface },
+          -- TelescopeResultsNormal = { fg = p.text, bg = p.nc },
+          -- TelescopeResultsBorder = { fg = p.nc, bg = p.nc },
+          -- TelescopePreviewNormal = { fg = p.text, bg = p.overlay },
+          -- TelescopePreviewBorder = { fg = p.overlay, bg = p.overlay },
         },
       })
     end,
@@ -39,6 +54,7 @@ return {
   {
     "rebelot/kanagawa.nvim",
     opts = {
+      enabled = false,
       compile = true,
       commentStyle = { italic = true },
       colors = {
@@ -76,12 +92,13 @@ return {
   },
   {
     "ellisonleao/gruvbox.nvim",
+    enabled = false,
   },
   {
     "folke/tokyonight.nvim",
     name = "tokyonight",
     opts = {
-      style = "moon",
+      style = "night",
       transparent = true,
       styles = {
         floats = "transparent",
@@ -89,9 +106,10 @@ return {
       },
     },
   },
-  { "catppuccin/nvim", name = "catppuccin", opts = {
-    flavour = "frappe",
+  { "catppuccin/nvim", enabled = false, name = "catppuccin", opts = {
+    flavour = "mocha",
   } },
+  { "oxfist/night-owl.nvim", name = "night-owl", enabled = false },
   {
     "LazyVim/LazyVim",
     opts = {
