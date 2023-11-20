@@ -5,3 +5,4 @@
 vim.opt.fillchars = { eob = " " }
 vim.opt.swapfile = false
 vim.opt.list = false
+vim.g.nightflyTransparent = true

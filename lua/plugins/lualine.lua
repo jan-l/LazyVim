@@ -26,7 +26,7 @@ return {
         lualine_z = { "progress", "location" },
       },
       options = {
-        theme = "rose-pine",
+        theme = "auto",
         component_separators = "",
         -- section_separators = { left = "", right = "" },
       },

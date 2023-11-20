@@ -91,14 +91,10 @@ return {
     },
   },
   {
-    "ellisonleao/gruvbox.nvim",
-    enabled = false,
-  },
-  {
     "folke/tokyonight.nvim",
     name = "tokyonight",
     opts = {
-      style = "night",
+      style = "moon",
       transparent = true,
       styles = {
         floats = "transparent",
@@ -106,14 +102,52 @@ return {
       },
     },
   },
-  { "catppuccin/nvim", enabled = false, name = "catppuccin", opts = {
-    flavour = "mocha",
-  } },
+  {
+    "catppuccin/nvim",
+    enabled = true,
+    name = "catppuccin",
+    opts = {
+      flavour = "mocha",
+      transparent_background = true,
+      integrations = {
+        cmp = true,
+        dashboard = true,
+        gitsigns = true,
+        treesitter = true,
+        notify = true,
+        mini = true,
+        harpoon = true,
+        indent_blankline = {
+          enabled = true,
+          color_indented_levels = true,
+        },
+        neotree = true,
+        noice = true,
+        treesitter_context = true,
+        telescope = true,
+        which_key = true,
+      },
+    },
+  },
   { "oxfist/night-owl.nvim", name = "night-owl", enabled = false },
+  {
+    "bluz71/vim-nightfly-colors",
+    name = "nightfly",
+    enabled = false,
+    lazy = false,
+    priority = 1000,
+  },
+  {
+    "JoosepAlviste/palenightfall.nvim",
+    priority = 1000,
+    enabled = false,
+    name = "palenightfall",
+    opts = {},
+  },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "rose-pine",
+      colorscheme = "catppuccin",
     },
   },
 }
