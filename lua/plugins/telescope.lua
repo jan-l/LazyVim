@@ -9,6 +9,30 @@ return {
         end,
         desc = "Find Plugin File",
       },
+      {
+        ";f",
+        function()
+          local builtin = require("telescope.builtin")
+          builtin.find_files({
+            no_ignore = false,
+            hidden = true,
+          })
+        end,
+      },
+      {
+        ";r",
+        function()
+          local builtin = require("telescope.builtin")
+          builtin.live_grep()
+        end,
+      },
+      {
+        ";t",
+        function()
+          local builtin = require("telescope.builtin")
+          builtin.help_tags()
+        end,
+      },
     },
     opts = {
       defaults = {
