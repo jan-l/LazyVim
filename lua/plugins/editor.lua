@@ -112,4 +112,16 @@ return {
       },
     },
   },
+  {
+    "folke/flash.nvim",
+    enabled = false,
+  },
+  -- git blame file lines and open file in git repository (browser)
+  {
+    "dinhhuy258/git.nvim",
+    event = "BufReadPre",
+    opts = {
+      default_mappings = false,
+    },
+  },
 }

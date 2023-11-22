@@ -33,6 +33,26 @@ return {
   {
     "nacro90/numb.nvim",
   },
+  -- create annotiations with one keybind, and jump your cusror in the inserted annotation (comment)
+  {
+    "danymat/neogen",
+    keys = {
+      {
+        "<leader>cc",
+        function()
+          require("neogen").generate({})
+        end,
+        desc = "Neogen comment",
+      },
+    },
+  },
+  {
+    "nvim-cmp",
+    dependencies = { "hrsh7th/nvim-cmp" },
+    opts = function(_, opts)
+      table.insert(opts.sources, { name = "emoji" })
+    end,
+  },
   -- {
   --   "L3MON4D3/LuaSnip",
   --   keys = function()
