@@ -19,6 +19,15 @@ vim.api.nvim_create_autocmd("BufRead", {
   end,
 })
 
+-- Adjust conceallevel for json files
+vim.api.nvim_create_autocmd("FileType", {
+
+  pattern = { "json", "jsonc" },
+  callback = function()
+    vim.wo.spell = false
+    vim.wo.conceallevel = 0
+  end,
+})
 -- windows to close with "q"
 vim.api.nvim_create_autocmd(
   "FileType",
