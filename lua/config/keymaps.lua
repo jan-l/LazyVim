@@ -78,6 +78,3 @@ map("n", "<leader>ha", "<cmd>lua require('harpoon.mark').add_file()<cr>", { desc
 map("n", "<leader>hr", "<cmd>lua require('harpoon.mark').rm_file()<cr>", { desc = "Remove from Harpoon" })
 map("n", "<leader>hn", "<cmd>lua require('harpoon.ui').nav_next()<cr>", { desc = "Next Harpoon buffer" })
 map("n", "<leader>hp", "<cmd>lua require('harpoon.ui').nav_prev()<cr>", { desc = "Prev Harpoon buffer" })
-
--- Create a new file in the same folder as current buffer
-map("n", "<leader>nf", ":e %:h/", { desc = "[N]ew [F]ile" })

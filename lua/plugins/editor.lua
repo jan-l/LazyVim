@@ -1,4 +1,5 @@
 return {
+  -- telescope config extends Lazyvim telescope config
   {
     "nvim-telescope/telescope.nvim",
     keys = {
@@ -50,14 +51,65 @@ return {
       },
     },
   },
+  -- file tree
   {
-    "telescope.nvim",
-    dependencies = {
-      "nvim-telescope/telescope-fzf-native.nvim",
-      build = "make",
-      config = function()
-        require("telescope").load_extension("fzf")
-      end,
+    "nvim-neo-tree/neo-tree.nvim",
+    opts = {
+      close_if_last_window = true,
+      -- display_name = "Files",
+      filesystem = {
+        filtered_items = {
+          hide_dotfiles = false,
+          always_show = {
+            ".env",
+            ".env.local",
+            ".npmrc",
+          },
+        },
+      },
+      window = {
+        position = "right",
+      },
+      source_selector = {
+        winbar = false,
+        statusline = false,
+        sources = {
+          {
+            -- source = "filesystem",
+            -- display_name = "  Files ",
+          },
+        },
+      },
+    },
+  },
+  -- symbols outline
+  {
+    "simrat39/symbols-outline.nvim",
+    cmd = "SymbolsOutline",
+    keys = {
+      { "<leader>cs", "<cmd>SymbolsOutline<cr>", desc = "Symbols Outline" },
+    },
+    config = true,
+  },
+  {
+    -- harpoon
+    "ThePrimeagen/harpoon",
+    dependencies = "nvim-lua/plenary.nvim",
+    opts = {
+      global_settings = { mark_branch = true },
+      width = vim.api.nvim_win_get_width(0) - 4,
+    },
+  },
+  {
+    -- which key config
+    "folke/which-key.nvim",
+    opts = {
+      defaults = {
+        ["<leader>n"] = { name = "+new" },
+        ["<leader>l"] = { name = "+lsp/lazy" },
+        ["<leader>h"] = { name = "+harpoon" },
+        ["<leader>t"] = { name = "+typescript" },
+      },
     },
   },
 }
