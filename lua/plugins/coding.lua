@@ -15,12 +15,6 @@ return {
       },
     },
   },
-  -- automatically add pairs for (, [, {
-  {
-    "windwp/nvim-autopairs",
-    event = "InsertEnter",
-    opts = {}, -- this is equalent to setup({}) function
-  },
   -- shows color for hex and rgb values
   {
     "NvChad/nvim-colorizer.lua",
