@@ -19,16 +19,31 @@ local function map(mode, lhs, rhs, opts)
     vim.keymap.set(mode, lhs, rhs, opts)
   end
 end
+-- do not yank normal mode x remove
+map("n", "x", '"_x')
+
+-- quick exit insert
+map("i", "jk", "<esc>", { desc = "Exit insert mode" })
+
+-- Move to start/end of line
+map("n", "H", "^")
+map("n", "L", "$")
+
+-- paste over currently selected text without yanking it
+map("v", "p", '"_dp')
+map("v", "P", '"_dP')
+
+-- better scrolling with centered cursor
+map("n", "<C-d>", "<C-d>zz")
+map("n", "<C-u>", "<C-u>zz")
 
 -- Move lines in visual mode
 map("v", "J", ":m '>+1<cr>gv=gv", { desc = "Move down" })
 map("v", "K", ":m '<-2<cr>gv=gv", { desc = "Move up" })
 
--- Bufferline "tabs"
-if Util.has("bufferline.nvim") then
-  map("n", "<Tab>", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
-  map("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Previous buffer" })
-end
+-- window
+map("n", "ss", ":split<CR>", { silent = true, desc = "Split window" })
+map("n", "sv", ":vsplit<CR>", { silent = true, desc = "Split vertical vindow" })
 
 -- search and replace word
 map(
@@ -37,32 +52,22 @@ map(
   [[>:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
   { desc = "Search and replace word in buffer" }
 )
--- quick exit insert
-map("i", "jk", "<esc>", { desc = "Exit insert mode" })
--- better scrolling with centered cursor
-map("n", "<C-d>", "<C-d>zz")
-map("n", "<C-u>", "<C-u>zz")
 
--- remap eol for nordic keyboard layout
-map("n", "€", "$")
+-- git
+map("n", "<leader>gb", '<cmd>lua require("git.blame").blame()<cr>', { desc = "Blame file" })
+map("n", "<leader>go", '<cmd>lua require("git.browse").open(false)<cr>', { desc = "Go to repository" })
 
--- paste over currently selected text without yanking it
-map("v", "p", '"_dp')
-map("v", "P", '"_dP')
-
--- open projects with telescope
-if Util.has("project.nvim") then
-  map("n", "<leader>fP", "<cmd>Telescope projects<cr>", { desc = "Open projects" })
+-- Bufferline "tabs"
+if Util.has("bufferline.nvim") then
+  map("n", "<Tab>", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
+  map("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Previous buffer" })
 end
 
--- Move to start/end of line
-map("n", "H", "^")
-map("n", "L", "$")
-
--- Remove default lazy keymap to create more keymaps under leader+l
+-- add LSP restart under leader l, move lazy to leader ll
 vim.keymap.del("n", "<leader>l")
 map("n", "<leader>ll", ":Lazy<CR>")
 map("n", "<leader>lr", ":LspRestart<CR>")
+
 -- harpoon
 map("n", "<leader>hl", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", { desc = "Show Harpoon" })
 map("n", "<leader>h1", "<cmd>lua require('harpoon.ui').nav_file(1)<cr>", { desc = "Harpoon Buffer 1" })
