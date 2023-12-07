@@ -30,6 +30,9 @@ return {
   -- create annotiations with one keybind, and jump your cusror in the inserted annotation (comment)
   {
     "danymat/neogen",
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    opts = {},
+    config = true,
     keys = {
       {
         "<leader>cc",

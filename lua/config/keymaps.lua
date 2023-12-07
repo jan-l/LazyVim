@@ -20,22 +20,22 @@ local function map(mode, lhs, rhs, opts)
   end
 end
 -- do not yank normal mode x remove
-map("n", "x", '"_x')
+map("n", "x", '"_x', { desc = "which_key_ignore" })
 
 -- quick exit insert
 map("i", "jk", "<esc>", { desc = "Exit insert mode" })
 
 -- Move to start/end of line
-map("n", "H", "^")
-map("n", "L", "$")
+map("n", "H", "^", { desc = "which_key_ignore" })
+map("n", "L", "$", { desc = "which_key_ignore" })
 
 -- paste over currently selected text without yanking it
-map("v", "p", '"_dp')
-map("v", "P", '"_dP')
+map("v", "p", '"_dp', { desc = "which_key_ignore" })
+map("v", "P", '"_dP', { desc = "which_key_ignore" })
 
 -- better scrolling with centered cursor
-map("n", "<C-d>", "<C-d>zz")
-map("n", "<C-u>", "<C-u>zz")
+map("n", "<C-d>", "<C-d>zz", { desc = "which_key_ignore" })
+map("n", "<C-u>", "<C-u>zz", { desc = "which_key_ignore" })
 
 -- Move lines in visual mode
 map("v", "J", ":m '>+1<cr>gv=gv", { desc = "Move down" })
@@ -63,6 +63,8 @@ if Util.has("bufferline.nvim") then
   map("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Previous buffer" })
 end
 
+vim.keymap.set("n", "<c-_>", "<c-/>", { remap = true, desc = "which_key_ignore" })
+vim.keymap.set("t", "<c-_>", "<c-/>", { remap = true, desc = "which_key_ignore" })
 -- add LSP restart under leader l, move lazy to leader ll
 vim.keymap.del("n", "<leader>l")
 map("n", "<leader>ll", ":Lazy<CR>")

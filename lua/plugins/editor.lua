@@ -56,7 +56,6 @@ return {
     "nvim-neo-tree/neo-tree.nvim",
     opts = {
       close_if_last_window = true,
-      -- display_name = "Files",
       filesystem = {
         filtered_items = {
           hide_dotfiles = false,
@@ -69,16 +68,6 @@ return {
       },
       window = {
         position = "right",
-      },
-      source_selector = {
-        winbar = false,
-        statusline = false,
-        sources = {
-          {
-            -- source = "filesystem",
-            -- display_name = "  Files ",
-          },
-        },
       },
     },
   },
@@ -105,10 +94,9 @@ return {
     "folke/which-key.nvim",
     opts = {
       defaults = {
-        ["<leader>n"] = { name = "+new" },
         ["<leader>l"] = { name = "+lsp/lazy" },
         ["<leader>h"] = { name = "+harpoon" },
-        ["<leader>t"] = { name = "+typescript" },
+        ["<leader>t"] = { name = "+test/typescript" },
       },
     },
   },

@@ -1,3 +1,4 @@
+-- comment here
 return {
   {
     "catppuccin/nvim",
@@ -7,6 +8,7 @@ return {
       flavour = "mocha",
       transparent_background = true,
       integrations = {
+        mason = true,
         cmp = true,
         dashboard = true,
         gitsigns = true,
@@ -14,9 +16,10 @@ return {
         notify = true,
         mini = true,
         harpoon = true,
+        symbols_outline = true,
         indent_blankline = {
           enabled = true,
-          color_indented_levels = true,
+          color_indented_levels = false,
         },
         neotree = true,
         noice = true,
