@@ -19,13 +19,13 @@ return {
   {
     "NvChad/nvim-colorizer.lua",
     opts = {
-      filetypes = { "css", "scss" },
-      names = false,
+      filetypes = { css = { names = false }, scss = { names = false } },
     },
   },
   -- peeks the line when entering line number
   {
     "nacro90/numb.nvim",
+    opts = {},
   },
   -- create annotiations with one keybind, and jump your cusror in the inserted annotation (comment)
   {
