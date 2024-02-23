@@ -97,6 +97,7 @@ return {
         ["<leader>l"] = { name = "+lsp/lazy" },
         ["<leader>h"] = { name = "+harpoon" },
         ["<leader>t"] = { name = "+test/typescript" },
+        ["<leader>n"] = { name = "+neogen" },
       },
     },
   },
