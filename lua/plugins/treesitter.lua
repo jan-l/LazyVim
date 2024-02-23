@@ -36,6 +36,8 @@ return {
         },
         autotag = {
           enable = true,
+          enable_rename = true,
+          enable_close_on_slash = true,
         },
       }
       require("nvim-treesitter.configs").setup(opts)

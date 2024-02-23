@@ -112,4 +112,24 @@ return {
       default_mappings = false,
     },
   },
+  {
+    "folke/zen-mode.nvim",
+    opts = {},
+  },
+  {
+    "epwalsh/obsidian.nvim",
+    dependencies = "nvim-lua/plenary.nvim",
+    opts = {
+      workspaces = {
+        {
+          name = "Personal",
+          path = "~/Documents/Notes",
+        },
+        {
+          name = "Work",
+          path = "~/Documents/Vaisala/Vaisala/",
+        },
+      },
+    },
+  },
 }

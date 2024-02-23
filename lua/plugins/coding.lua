@@ -31,13 +31,15 @@ return {
   {
     "danymat/neogen",
     dependencies = { "nvim-treesitter/nvim-treesitter" },
-    opts = {},
     config = true,
+    opts = {
+      snippet_engine = "luasnip",
+    },
     keys = {
       {
-        "<leader>cc",
+        "<leader>nc",
         function()
-          require("neogen").generate({})
+          require("neogen").generate({ type = "func" })
         end,
         desc = "Neogen comment",
       },
@@ -48,12 +50,6 @@ return {
     dependencies = { "hrsh7th/nvim-cmp" },
     opts = function(_, opts)
       table.insert(opts.sources, { name = "emoji" })
-    end,
-  },
-  {
-    "L3MON4D3/LuaSnip",
-    keys = function()
-      return {}
     end,
   },
   {

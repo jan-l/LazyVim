@@ -22,13 +22,15 @@ return {
     opts = {
       sections = {
         -- use default sections but overwrite some
-        lualine_a = { "mode" },
+        lualine_a = { { "mode", separator = { left = "" } } },
         lualine_b = { "branch", "diagnostics" },
         lualine_y = { lsp },
         lualine_z = { "progress", "location" },
       },
       options = {
         theme = "auto",
+        section_separators = { left = "", right = "" },
+        -- component_separators = { left = "", right = "" },
         component_separators = "",
       },
     },
