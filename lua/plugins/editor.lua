@@ -4,14 +4,7 @@ return {
     "nvim-telescope/telescope.nvim",
     keys = {
       {
-        "<leader>fp",
-        function()
-          require("telescope.builtin").find_files({ cwd = require("lazy.core.config").options.root })
-        end,
-        desc = "Find Plugin File",
-      },
-      {
-        ";f",
+        "<leader>sf",
         function()
           local builtin = require("telescope.builtin")
           builtin.find_files({
@@ -112,6 +105,10 @@ return {
     opts = {
       default_mappings = false,
     },
+  },
+  {
+    "sindrets/diffview.nvim",
+    opts = {},
   },
   {
     "folke/zen-mode.nvim",
